@@ -16,14 +16,31 @@
     }
   },
   "scripts": {
-    "build": "NODE_ENV=production microbundle",
-    "test:cjs": "node test/dist/index.cjs",
-    "test:modern": "node test/dist/index.modern.js",
-    "test:module": "node test/dist/index.module.js",
-    "test:src": "node test/src/index.js"
+    "build": "microbundle",
+    "test": "npm run test:src",
+    "test-cmd": "ava",
+    "test:cjs": "IMPORT_MAP_PATH=test/import-maps/dist/index.json npm run test-cmd",
+    "test:dist": "npm run test:modern && npm run test:module && npm run test:cjs",
+    "test:modern": "IMPORT_MAP_PATH=test/import-maps/dist/index.modern.json npm run test-cmd",
+    "test:module": "IMPORT_MAP_PATH=test/import-maps/dist/index.module.json npm run test-cmd",
+    "test:src": "IMPORT_MAP_PATH=test/import-maps/src/index.json npm run test-cmd"
   },
   "devDependencies": {
+    "@node-loader/import-maps": "^1.0.3",
+    "ava": "^4.0.0-rc.1",
     "microbundle": "0.14.2",
     "regenerator-runtime": "0.13.9"
+  },
+  "ava": {
+    "files": [
+      "test/src/**/*"
+    ],
+    "require": [
+      "regenerator-runtime/runtime"
+    ],
+    "nodeArguments": [
+      "--experimental-loader=@node-loader/import-maps"
+    ],
+    "timeout": "2s"
   }
 }
