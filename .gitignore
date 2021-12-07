@@ -1,0 +1,8 @@
+# lock file
+!yarn.lock
+
+# Generated files
+/dist
+
+# Dependency directory
+node_modules
