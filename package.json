@@ -39,7 +39,7 @@
       "regenerator-runtime/runtime"
     ],
     "nodeArguments": [
-      "--experimental-loader=@node-loader/import-maps"
+      "--import=data:text/javascript,import {register} from 'node:module'; import {pathToFileURL} from 'node:url'; register('@node-loader/import-maps', pathToFileURL('./'))"
     ],
     "timeout": "2s"
   }
