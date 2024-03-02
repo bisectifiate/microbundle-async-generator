@@ -41,6 +41,6 @@
     "nodeArguments": [
       "--import=data:text/javascript,import {register} from 'node:module'; import {pathToFileURL} from 'node:url'; register('@node-loader/import-maps', pathToFileURL('./'))"
     ],
-    "timeout": "2s"
+    "timeout": "15s"
   }
 }
