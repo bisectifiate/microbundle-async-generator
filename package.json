@@ -36,7 +36,7 @@
       "test/src/**/*"
     ],
     "require": [
-      "regenerator-runtime/runtime"
+      "regenerator-runtime/runtime.js"
     ],
     "nodeArguments": [
       "--import=data:text/javascript,import {register} from 'node:module'; import {pathToFileURL} from 'node:url'; register('@node-loader/import-maps', pathToFileURL('./'))"
