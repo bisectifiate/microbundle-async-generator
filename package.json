@@ -29,7 +29,7 @@
     "@node-loader/import-maps": "1.1.0",
     "ava": "6.1.2",
     "microbundle": "0.14.2",
-    "regenerator-runtime": "0.13.9"
+    "regenerator-runtime": "0.14.1"
   },
   "ava": {
     "files": [
