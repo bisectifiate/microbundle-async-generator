@@ -29,3 +29,17 @@ export const exhaustVerbose = async (iterator) => {
 		if (done) break;
 	}
 };
+
+export const promised = (x) => Promise.resolve(x);
+
+export const switchFallThrough = async (condition, a, b) => {
+	switch (condition) {
+		case 0:
+			if (condition === 1) {
+				return await promised(a);
+			}
+		case 1:
+			return await promised(b);
+	}
+	return await promised(a);
+};
