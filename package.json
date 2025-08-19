@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@node-loader/import-maps": "1.1.0",
-    "ava": "6.1.2",
+    "ava": "6.4.1",
     "microbundle": "0.14.2",
     "regenerator-runtime": "0.14.1"
   },
